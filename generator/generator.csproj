@@ -73,6 +73,12 @@
     <Compile Include="ZarzadzanieBiletamiForm.Designer.cs">
       <DependentUpon>ZarzadzanieBiletamiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZarzadzanieKlientamiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZarzadzanieKlientamiForm.Designer.cs">
+      <DependentUpon>ZarzadzanieKlientamiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZarzadzanieLotamiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ZarzadzanieBiletamiForm.resx">
+      <DependentUpon>ZarzadzanieBiletamiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZarzadzanieKlientamiForm.resx">
+      <DependentUpon>ZarzadzanieKlientamiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ZarzadzanieLotamiForm.resx">
       <DependentUpon>ZarzadzanieLotamiForm.cs</DependentUpon>
     </EmbeddedResource>

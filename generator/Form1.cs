@@ -22,7 +22,8 @@ namespace generator
             InitializeComponent();
             initLotniska();
             initSamoloty();
-            initTrasy(); 
+            initTrasy();
+            initKlienci();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,6 +66,21 @@ namespace generator
             BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[4], BazaDanych.lotniska[2]));
             BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[4], BazaDanych.lotniska[3]));
         }
+        private static void initKlienci()
+        {
+            int ID = 0;
+            BazaDanych.dodajKlienta(new Posrednik(ID++, "Budimex"));
+            BazaDanych.dodajKlienta(new Posrednik(ID++, "Luliczicy"));
+            BazaDanych.dodajKlienta(new Posrednik(ID++, "Stefany"));
+            BazaDanych.dodajKlienta(new Posrednik(ID++, "Janusze"));
+            BazaDanych.dodajKlienta(new Indywidualny(ID++,"Stefan","Kowalski"));
+            BazaDanych.dodajKlienta(new Indywidualny(ID++, "Janusz", "Bierczyk"));
+            BazaDanych.dodajKlienta(new Indywidualny(ID++, "Jolanta", "KoKiepska"));
+            BazaDanych.dodajKlienta(new Indywidualny(ID++, "Lysy", "Blokacz"));    
+            BazaDanych.dodajKlienta(new Indywidualny(ID++, "Brajanek", "Franczesko"));
+
+        }
+       
         private static Trasa createTrasa(int id, Lotnisko odlot, Lotnisko przylot)
         {
             Trasa trasa = new Trasa();
@@ -111,6 +127,12 @@ namespace generator
         {
             ZarzadzanieBiletamiForm zarzadzanieBiletamiForm = new ZarzadzanieBiletamiForm();
             zarzadzanieBiletamiForm.ShowDialog();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            ZarzadzanieKlientamiForm zarzadzanieKlientamiForm = new ZarzadzanieKlientamiForm();
+            zarzadzanieKlientamiForm.ShowDialog();
         }
     }
 }

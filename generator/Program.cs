@@ -19,7 +19,7 @@ namespace generator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            int ID = 0;
+           /* int ID = 0;
             string mieodlotu, mieprzylotu;
             foreach (Bilet bilet in BazaDanych.bilety)
             {
@@ -59,6 +59,7 @@ namespace generator
                 Indywidualny indywidualny = new Indywidualny(ID, imie, nazwisko);
 
             }
+            */
         }
 
     }
