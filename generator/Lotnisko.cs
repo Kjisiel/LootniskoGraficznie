@@ -15,7 +15,7 @@ namespace L1
     /// -szerokość geograficzną
     /// -długość geograficzną.
     /// </summary>
-    class Lotnisko
+    public class Lotnisko
     {
         public int ID { get; set; }
         public string nazwa { get; set; }

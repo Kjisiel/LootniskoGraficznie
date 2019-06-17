@@ -13,7 +13,7 @@ namespace L1
     /// -klient, który zakupił bilet
     /// -lot, na który bilet został zakupiony
     /// </summary>
-    class Bilet
+    public class Bilet
     {
         public int ID { get; set; }
         public int miejsce { get; set; }

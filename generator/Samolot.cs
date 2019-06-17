@@ -15,7 +15,7 @@ namespace L1
     /// -średnia prędkość
     /// -lotnisko, na którym obecnie się znajduje.
     /// </summary>
-    class Samolot
+   public class Samolot
     {
         public int ID { get; set; }
         public string nazwa { get; set; }
@@ -24,7 +24,8 @@ namespace L1
         public double sredniaPredkosc { get; set; }
         public Lotnisko obecneLotnisko { get; set; }
 
-
+        public Samolot() { }
+            
         
 
         public Samolot(int iD, string nazwa, int zasieg, int liczbamiejsc,double sredniaPredkosc)

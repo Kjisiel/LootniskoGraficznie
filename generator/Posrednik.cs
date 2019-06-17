@@ -9,7 +9,7 @@ namespace L1
     /// <summary>
     /// Klasa zwiera pole z nazwą firmy pośredniczącej. Pochodna klasy Klient.
     /// </summary>
-    class Posrednik : Klient
+    public class Posrednik : Klient
     {
         public string nazwa { get; set; }
 

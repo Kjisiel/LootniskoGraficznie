@@ -12,7 +12,7 @@ namespace L1
     /// -lotniska, z których następuje odlot oraz przylot
     /// -odległość między lotniskami
     /// </summary>
-    class Trasa
+    public class Trasa
     {
         public int ID { get; set; }
         public Lotnisko odlot;

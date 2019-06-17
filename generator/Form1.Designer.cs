@@ -31,11 +31,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Location = new System.Drawing.Point(28, 12);
@@ -70,6 +74,26 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(65, 121);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(119, 64);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Klienci";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(61, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 67);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Kup Bilet";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // groupBox2
             // 
@@ -105,25 +129,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(61, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 67);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Kup Bilet";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.button7.Location = new System.Drawing.Point(65, 313);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 64);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Zapis do pliku";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
-            // button6
+            // button8
             // 
-            this.button6.Location = new System.Drawing.Point(65, 121);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 64);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Klienci";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            this.button8.Location = new System.Drawing.Point(65, 218);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(119, 60);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Odczyt z pliku";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // Form1
             // 
@@ -151,6 +175,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

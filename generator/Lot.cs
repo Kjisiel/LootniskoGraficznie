@@ -15,7 +15,7 @@ namespace L1
     /// -trasa
     /// -samolot.
     /// </summary>
-    class Lot
+   public class Lot
     {
         public int ID { get; set; }
         public int wykupioneMiejsca { get; set; }

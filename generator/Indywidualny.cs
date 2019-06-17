@@ -12,7 +12,7 @@ namespace L1
     /// -nazwisko.
     /// Pochodna klasy Klient.
     /// </summary>
-    class Indywidualny : Klient
+    public class Indywidualny : Klient
     {
         public string imie { set; get; }
         public string nazwisko { set; get; }

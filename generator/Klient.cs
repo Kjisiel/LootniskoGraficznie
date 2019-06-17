@@ -9,7 +9,7 @@ namespace L1
     /// <summary>
     /// Klasa zawiera ID klienta. Bazowa klas Indywidualny i Posrednik.
     /// </summary>
-    class Klient
+    public class Klient
     {
         public int ID { get; set; }
 

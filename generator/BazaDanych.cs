@@ -92,10 +92,10 @@ namespace L1
 
         public void zapis()
         {
-            XmlSerializer sklienci = new XmlSerializer(typeof(List<Klient>));
-            StreamWriter zklienci = new StreamWriter("klienci.xml");
-            sklienci.Serialize(zklienci, klienci);
-            zklienci.Close();
+           // XmlSerializer sposrednicy = new XmlSerializer(typeof(List<Posrednik>));
+            //StreamWriter zposrednicy = new StreamWriter("klienci.xml");
+            //sposrednicy.Serialize(sposrednicy, klienci);
+            //zposrednicy.Close();
 
             XmlSerializer ssamoloty = new XmlSerializer(typeof(List<Samolot>));
             StreamWriter zsamoloty = new StreamWriter("samoloty.xml");
@@ -125,10 +125,10 @@ namespace L1
 
         public void odczyt()
         {
-            XmlSerializer dklienci = new XmlSerializer(typeof(List<Klient>));
-            StreamReader oklienci = new StreamReader("klienci.xml");
-            klienci = (List<Klient>)dklienci.Deserialize(oklienci);
-            oklienci.Close();
+            //XmlSerializer dklienci = new XmlSerializer(typeof(List<Klient>));
+            //StreamReader oklienci = new StreamReader("klienci.xml");
+            //klienci = (List<Klient>)dklienci.Deserialize(oklienci);
+            //oklienci.Close();
 
             XmlSerializer dsamoloty = new XmlSerializer(typeof(List<Samolot>));
             StreamReader osamoloty = new StreamReader("samoloty.xml");

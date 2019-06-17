@@ -139,5 +139,15 @@ namespace generator
             ZarzadzanieKlientamiForm zarzadzanieKlientamiForm = new ZarzadzanieKlientamiForm();
             zarzadzanieKlientamiForm.ShowDialog();
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            BazaDanych.zapis();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            BazaDanych.odczyt();
+        }
     }
 }
