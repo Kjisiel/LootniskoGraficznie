@@ -20,17 +20,26 @@ namespace generator
         }
         public void initLotniskaCombobox()
         {
-            comboBox1.Items.Clear();
-            foreach (Lotnisko lotnisko in BazaDanych.lotniska)
             {
-                // ComboboxItem item = new ComboboxItem();
-                //  item.Text = samolot.nazwa;
-                //  item.Value = samolot.ID;
-                comboBox1.DisplayMember = "Text";
-                comboBox1.ValueMember = "Value";
+                comboBox1.Items.Clear();
 
-                comboBox1.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
+                foreach (Samolot samolot in BazaDanych.samoloty)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = samolot.nazwa;
+                    item.Value = samolot.ID;
+                    comboBox1.Items.Add(item);
+                }
+                if (comboBox1.Items.Count > 0)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox1.SelectedIndex = -1;
+                    comboBox1.SelectedText = "brak wartości";
 
+                }
             }
         }
 
@@ -52,5 +61,34 @@ namespace generator
         {
 
         }
+
+        private void Label9_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            intitLotniskoView();
+        }
+        private void intitLotniskoView()
+        {
+
+
+            int ID = (comboBox1.SelectedItem as ComboboxItem).Value;
+            if (ID >= 0)
+            {
+                Lotnisko lotnisko = BazaDanych.lotniska.Find(x => x.ID == ID);
+                textBox11.Text = lotnisko.ID.ToString();
+                textBox6.Text = lotnisko.nazwa;
+                textBox7.Text = lotnisko.panstwo.ToString();
+                textBox8.Text = lotnisko.miasto.ToString();
+                textBox9.Text = lotnisko.szerokoscGeo.ToString();
+                textBox10.Text = lotnisko.wysokoscGeo.ToString();
+                 
+
+            }
+        }
+
+      
     }
 }

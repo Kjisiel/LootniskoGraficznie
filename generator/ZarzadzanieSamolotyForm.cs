@@ -41,7 +41,7 @@ namespace generator
                 comboBox1.SelectedText = "brak wartości";
            
             }
-
+            intitSamolotView();
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
@@ -56,6 +56,7 @@ namespace generator
 
         private void Button2_Click(object sender, EventArgs e)
         {
+
             int ID = 1;
             if (BazaDanych.samoloty.Count()>0){
                 ID = BazaDanych.samoloty.Max(x => x.ID) + 1;
@@ -63,7 +64,10 @@ namespace generator
             
             Samolot samolot = new Samolot(ID,textBox1.Text,int.Parse(textBox2.Text),
                 int.Parse(textBox3.Text),double.Parse(textBox4.Text));
+            Random random = new Random();
+            Lotnisko obecneLotnisko = BazaDanych.lotniska[random.Next(BazaDanych.lotniska.Count)];
             BazaDanych.samoloty.Add(samolot);
+            
             initSamolotyCombobox();
 
 
@@ -87,5 +91,32 @@ namespace generator
 
         }
 
+        private void Label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            intitSamolotView();
+        }
+
+        private void intitSamolotView() { 
+
+
+            int ID = (comboBox1.SelectedItem as ComboboxItem).Value;
+            if (ID>=0)
+            {
+                Samolot samolot = BazaDanych.samoloty.Find(x => x.ID == ID);
+                textBox5.Text = samolot.ID.ToString();
+                textBox6.Text = samolot.nazwa;
+                textBox7.Text = samolot.zasieg.ToString();
+                textBox8.Text = samolot.liczbamiejsc.ToString();
+                textBox9.Text = samolot.sredniaPredkosc.ToString();
+                textBox10.Text = samolot.obecneLotnisko.miasto
+                    + " - " + samolot.obecneLotnisko.nazwa;
+
+            }
+        }
     }
 }

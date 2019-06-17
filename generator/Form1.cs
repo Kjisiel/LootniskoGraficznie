@@ -17,8 +17,8 @@ namespace generator
         public Form1()
         {
             InitializeComponent();
-            initSamoloty();
             initLotniska();
+            initSamoloty();
             initTrasy(); 
         }
 
@@ -34,6 +34,14 @@ namespace generator
             BazaDanych.dodajSamolot(new Samolot(ID++, "bołing3", 32000, 200,300));
             BazaDanych.dodajSamolot(new Samolot(ID++, "bołing4", 33000, 350,340));
 
+            Random random = new Random();
+
+            foreach(Samolot samolot in BazaDanych.samoloty)
+            {
+                samolot.obecneLotnisko = BazaDanych.lotniska[random.Next(BazaDanych.lotniska.Count)];
+            }
+
+
         }
         private static void initLotniska()
         {
@@ -48,8 +56,6 @@ namespace generator
         private static void initTrasy()
         {
             int ID = 0;
-            //Lotnisko odlot = BazaDanych.lotniska.
-            // BazaDanych.dodajTrase(new Trasa(ID++,))
             Lotnisko lotnisko1 = BazaDanych.lotniska[0];
             Lotnisko lotnisko2 = BazaDanych.lotniska[2];
             BazaDanych.dodajTrase(createTrasa(ID++, lotnisko1, lotnisko2));
@@ -82,6 +88,11 @@ namespace generator
         {
             ZarzadzanieTrasamiForm zarzadzanieTrasamiForm = new ZarzadzanieTrasamiForm();
             zarzadzanieTrasamiForm.ShowDialog();
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
