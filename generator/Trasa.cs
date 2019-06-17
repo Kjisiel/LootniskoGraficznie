@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera pola z informacjami o trasach:
+    /// -ID
+    /// -lotniska, z których następuje odlot oraz przylot
+    /// -odległość między lotniskami
+    /// </summary>
     class Trasa
     {
         public int ID { get; set; }

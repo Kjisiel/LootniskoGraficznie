@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zawiera pola z informacjami o biletach:
+    /// -ID
+    /// -miejsce w samolocie
+    /// -klient, który zakupił bilet
+    /// -lot, na który bilet został zakupiony
+    /// </summary>
     class Bilet
     {
         public int ID { get; set; }

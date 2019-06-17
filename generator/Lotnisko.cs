@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera pola z informacjami o lotniskach:
+    /// -ID
+    /// -nazwę
+    /// -państwo
+    /// -miasto
+    /// -szerokość geograficzną
+    /// -długość geograficzną.
+    /// </summary>
     class Lotnisko
     {
         public int ID { get; set; }
