@@ -47,6 +47,11 @@ namespace generator
 
 
         }
+        private static void initLoty()
+        {
+            int ID = 0;
+           
+        }
         private static void initLotniska()
         {
             int ID = 0;

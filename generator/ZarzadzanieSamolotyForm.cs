@@ -64,7 +64,14 @@ namespace generator
             if (BazaDanych.samoloty.Count()>0){
                 ID = BazaDanych.samoloty.Max(x => x.ID) + 1;
             }
-            
+            if (textBox1.Text == "")
+            {
+                throw new ArgumentException("Nie poprawana nazwa");
+            }
+            if(!int.TryParse(textBox2.Text,out int y))
+            {
+                throw new ArgumentException("zasięg musi być liczbą calkowitą");
+            }
             Samolot samolot = new Samolot(ID,textBox1.Text,int.Parse(textBox2.Text),
                 int.Parse(textBox3.Text),double.Parse(textBox4.Text));
             Random random = new Random();
