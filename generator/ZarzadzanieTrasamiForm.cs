@@ -17,6 +17,8 @@ namespace generator
         {
             InitializeComponent();
             initTrasyCombobox();
+            initOdlotCombobox();
+            initPrzylotCombobox();
         }
         private void initLotniskaCombobox()
         {
@@ -25,30 +27,26 @@ namespace generator
         public void initOdlotCombobox()
         {
             comboBox1.Items.Clear();
+             comboBox1.DisplayMember = "Text";
+             comboBox1.ValueMember = "Value";
             foreach (Lotnisko lotnisko in BazaDanych.lotniska)
             {
-                // ComboboxItem item = new ComboboxItem();
-                //  item.Text = samolot.nazwa;
-                //  item.Value = samolot.ID;
-                comboBox1.DisplayMember = "Text";
-                comboBox1.ValueMember = "Value";//lul
-
-                comboBox1.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
+            
+              comboBox1.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
 
             }
         }
         public void initPrzylotCombobox()
         {
-            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox2.DisplayMember = "Text";
+            comboBox2.ValueMember = "Value";
+
             foreach (Lotnisko lotnisko in BazaDanych.lotniska)
             {
-                // ComboboxItem item = new ComboboxItem();
-                //  item.Text = samolot.nazwa;
-                //  item.Value = samolot.ID;
-                comboBox1.DisplayMember = "Text";
-                comboBox1.ValueMember = "Value";
+              
 
-                comboBox1.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
+                comboBox2.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
 
             }
         }
@@ -73,6 +71,15 @@ namespace generator
         private void ZarzadzanieTrasamiForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            int ID = BazaDanych.trasy.Max(x => x.ID) + 1;
+            //Trasa trasa = new Trasa (ID, textBox1.Text, int.Parse(textBox2.Text),
+              //  int.Parse(textBox3.Text), double.Parse(textBox4.Text));
+           // BazaDanych.trasy.Add(trasa);
+            initTrasyCombobox();
         }
     }
 }

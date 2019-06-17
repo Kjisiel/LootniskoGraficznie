@@ -184,6 +184,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ZarzadzanieSamolotyForm";
             this.Text = "ZarzadzanieSamoloty";
+            this.Load += new System.EventHandler(this.ZarzadzanieSamolotyForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

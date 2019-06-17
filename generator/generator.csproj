@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="BazaDanych.cs" />
     <Compile Include="Bilet.cs" />
+    <Compile Include="ComboboxItem.cs" />
+    <Compile Include="DistanceUtil.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

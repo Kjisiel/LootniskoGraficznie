@@ -60,20 +60,11 @@ namespace generator
             trasa.ID = id;
             trasa.odlot = odlot;
             trasa.przylot = przylot;
-            double odleglosc = calculateOdleglosc(odlot, przylot);
+            double odleglosc = DistanceUtil.calculate(odlot, przylot);
             trasa.odleglosc = odleglosc;
             return trasa;
         }
-        private static Double calculateOdleglosc(Lotnisko odlot, Lotnisko przylot)
-        {
-            Double odleglosc = 0;//Todo https://pl.wikibooks.org/wiki/Astronomiczne_podstawy_geografii/Odległości
-            double x1 = odlot.szerokoscGeo;
-            double x2 = przylot.szerokoscGeo;
-            double y1 = odlot.wysokoscGeo;
-            double y2 = przylot.wysokoscGeo;
-            return odleglosc;
-
-        }
+ 
 
         private void Button1_Click(object sender, EventArgs e)
         {
