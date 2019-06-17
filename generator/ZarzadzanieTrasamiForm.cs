@@ -31,7 +31,7 @@ namespace generator
                 //  item.Text = samolot.nazwa;
                 //  item.Value = samolot.ID;
                 comboBox1.DisplayMember = "Text";
-                comboBox1.ValueMember = "Value";
+                comboBox1.ValueMember = "Value";//lul
 
                 comboBox1.Items.Add((new { Text = lotnisko.nazwa, Value = lotnisko.ID }));
 
