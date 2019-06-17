@@ -17,6 +17,8 @@ namespace generator
         {
             InitializeComponent();
             initTrasyComboBox();
+            initSamolotyComboBox();
+          //  initLotCombobox();
         }
 
         private void initTrasyComboBox()
@@ -84,7 +86,7 @@ namespace generator
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void initSamolotyComboBox()
@@ -102,7 +104,7 @@ namespace generator
                 ComboboxItem item = new ComboboxItem();
 
                 Double distnace = DistanceUtil.calculate(wybraneLotnisko, samolot.obecneLotnisko);
-
+                Double czas = Math.Round((distnace /samolot.sredniaPredkosc),1); 
              
 
 
@@ -112,7 +114,7 @@ namespace generator
                 }
 
 
-                item.Text = samolot.nazwa + " " + (int)distnace + " km";
+                item.Text = samolot.nazwa + " " + (int)distnace + " km, "+czas+" h";
 
                 item.Value = samolot.ID;
                 comboBox2.Items.Add(item);
@@ -123,12 +125,96 @@ namespace generator
                 }
             }
 
+            
 
-           
 
+
+        }
+        public void initLotCombobox()
+        {
+            {
+                comboBox3.Items.Clear();
+
+                foreach (Lot lot in BazaDanych.loty)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = lot.ID.ToString()+ " " + lot.trasa.odlot.nazwa + " " + lot.trasa.przylot.nazwa;
+                    item.Value = lot.ID;
+                    comboBox3.Items.Add(item);
+                }
+                if (comboBox3.Items.Count > 0)
+                {
+                    comboBox3.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox3.SelectedIndex = -1;
+                    comboBox3.SelectedText = "brak wartości";
+
+                }
+            }
         }
 
         private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Lot lot = new Lot();
+            if (BazaDanych.loty.Count > 0)
+            {
+                lot.ID = BazaDanych.loty.Max(x => x.ID) + 1;
+            }
+            else
+            {
+                lot.ID = 1;
+            }
+
+            if (comboBox1.SelectedIndex != -1)
+            {
+                int IDtrasa = (comboBox1.SelectedItem as ComboboxItem).Value;
+                Trasa trasa = BazaDanych.trasy.Find(x => x.ID == IDtrasa); 
+                //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
+                lot.trasa = trasa;
+                
+            }
+            if (comboBox2.SelectedIndex != -1)
+            {
+                int IDsamolot = (comboBox2.SelectedItem as ComboboxItem).Value;
+                Samolot samolot = BazaDanych.samoloty.Find(x => x.ID == IDsamolot);
+                //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
+                lot.samolot = samolot;
+
+            }else
+            {
+                //todo rzucenie wyjatku
+            }
+            lot.kwota = float.Parse(textBox1.Text);
+            BazaDanych.loty.Add(lot);
+            //initSamolotyComboBox();
+            initTrasyComboBox();
+            initLotCombobox();
+
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox3.SelectedIndex != -1)
+            {
+                int ID = (comboBox3.SelectedItem as ComboboxItem).Value;
+                Lot lot = BazaDanych.loty.Find(x => x.ID == ID);
+                BazaDanych.loty.Remove(lot);
+                Console.WriteLine("a=" + BazaDanych.loty.Count);
+                comboBox3.Items.Remove(ID);
+            }
+            initLotCombobox();
+        
+        }
+
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

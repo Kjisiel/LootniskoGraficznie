@@ -67,6 +67,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samolot.cs" />
     <Compile Include="Trasa.cs" />
+    <Compile Include="ZarzadzanieBiletamiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZarzadzanieBiletamiForm.Designer.cs">
+      <DependentUpon>ZarzadzanieBiletamiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZarzadzanieLotamiForm.cs">
       <SubType>Form</SubType>
     </Compile>

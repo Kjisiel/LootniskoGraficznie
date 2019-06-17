@@ -60,6 +60,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Usuń";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // comboBox3
             // 
@@ -68,6 +69,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(138, 24);
             this.comboBox3.TabIndex = 13;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged);
             // 
             // groupBox2
             // 

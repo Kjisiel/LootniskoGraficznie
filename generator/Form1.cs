@@ -56,9 +56,11 @@ namespace generator
         private static void initTrasy()
         {
             int ID = 0;
-            Lotnisko lotnisko1 = BazaDanych.lotniska[0];
-            Lotnisko lotnisko2 = BazaDanych.lotniska[2];
-            BazaDanych.dodajTrase(createTrasa(ID++, lotnisko1, lotnisko2));
+            BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[0], BazaDanych.lotniska[2]));
+            BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[0], BazaDanych.lotniska[1]));
+            BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[2], BazaDanych.lotniska[1]));
+            BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[4], BazaDanych.lotniska[2]));
+            BazaDanych.dodajTrase(createTrasa(ID++, BazaDanych.lotniska[4], BazaDanych.lotniska[3]));
         }
         private static Trasa createTrasa(int id, Lotnisko odlot, Lotnisko przylot)
         {
@@ -66,6 +68,7 @@ namespace generator
             trasa.ID = id;
             trasa.odlot = odlot;
             trasa.przylot = przylot;
+          
             double odleglosc = DistanceUtil.calculate(odlot, przylot);
             trasa.odleglosc = odleglosc;
             return trasa;
@@ -99,6 +102,12 @@ namespace generator
         {
             ZarzadzanieLotamiForm zarzadzanieLotamiForm = new ZarzadzanieLotamiForm();
             zarzadzanieLotamiForm.ShowDialog();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            ZarzadzanieBiletamiForm zarzadzanieBiletamiForm = new ZarzadzanieBiletamiForm();
+            zarzadzanieBiletamiForm.ShowDialog();
         }
     }
 }

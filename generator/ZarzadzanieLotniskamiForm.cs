@@ -23,11 +23,11 @@ namespace generator
             {
                 comboBox1.Items.Clear();
 
-                foreach (Samolot samolot in BazaDanych.samoloty)
+                foreach (Lotnisko lotnisko in BazaDanych.lotniska)
                 {
                     ComboboxItem item = new ComboboxItem();
-                    item.Text = samolot.nazwa;
-                    item.Value = samolot.ID;
+                    item.Text = lotnisko.nazwa;
+                    item.Value = lotnisko.ID;
                     comboBox1.Items.Add(item);
                 }
                 if (comboBox1.Items.Count > 0)
@@ -50,10 +50,21 @@ namespace generator
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int ID = BazaDanych.lotniska.Max(x => x.ID) + 1;
-            Lotnisko lotnisko = new Lotnisko(ID, textBox1.Text,textBox2.Text,
+            
+
+
+            int ID = 1;
+            if (BazaDanych.lotniska.Count() > 0)
+            {
+                ID = BazaDanych.lotniska.Max(x => x.ID) + 1;
+            }
+
+            Lotnisko lotnisko = new Lotnisko(ID, textBox1.Text, textBox2.Text,
                 textBox3.Text, double.Parse(textBox4.Text),double.Parse(textBox5.Text));
+            Random random = new Random();
+            
             BazaDanych.lotniska.Add(lotnisko);
+
             initLotniskaCombobox();
         }
 
@@ -89,6 +100,17 @@ namespace generator
             }
         }
 
-      
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                int ID = (comboBox1.SelectedItem as ComboboxItem).Value;
+                Lotnisko lotnisko = BazaDanych.lotniska.Find(x => x.ID == ID);
+                BazaDanych.lotniska.Remove(lotnisko);
+                Console.WriteLine("a=" + BazaDanych.lotniska.Count);
+                comboBox1.Items.Remove(ID);
+            }
+            initLotniskaCombobox();
+        }
     }
 }

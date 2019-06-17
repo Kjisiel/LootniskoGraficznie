@@ -32,8 +32,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Location = new System.Drawing.Point(28, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(297, 426);
@@ -80,6 +83,16 @@
             this.groupBox2.Text = "Zarządzanie";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(119, 313);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(136, 77);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Loty";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(119, 218);
@@ -90,15 +103,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button4
+            // button5
             // 
-            this.button4.Location = new System.Drawing.Point(119, 313);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 77);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Loty";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button5.Location = new System.Drawing.Point(61, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 67);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Kup Bilet";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // Form1
             // 
@@ -110,6 +123,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -123,6 +137,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
