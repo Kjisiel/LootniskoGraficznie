@@ -94,5 +94,11 @@ namespace generator
         {
 
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            ZarzadzanieLotamiForm zarzadzanieLotamiForm = new ZarzadzanieLotamiForm();
+            zarzadzanieLotamiForm.ShowDialog();
+        }
     }
 }

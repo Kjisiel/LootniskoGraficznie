@@ -15,7 +15,7 @@ namespace L1
         public Trasa trasa;
         public Samolot samolot;
 
-
+   
         public Lot(int iD, int wykupioneMiejsca, float kwota, Trasa trasa, Samolot samolot,float czasLotu)
         {
             ID = iD;

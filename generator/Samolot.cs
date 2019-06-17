@@ -15,6 +15,7 @@ namespace L1
         public double sredniaPredkosc { get; set; }
         public Lotnisko obecneLotnisko { get; set; }
 
+
         
 
         public Samolot(int iD, string nazwa, int zasieg, int liczbamiejsc,double sredniaPredkosc)
