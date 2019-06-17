@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa okna startowego programu.
+    /// </summary>
     public partial class Form1 : Form
     {
         BazaDanych BazaDanych = new BazaDanych();

@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa pozwala na zarządzanie samolotami: ich przeglądanie, dodawanie i usuwanie.
+    /// </summary>
     public partial class ZarzadzanieSamolotyForm : Form
     {
         public ZarzadzanieSamolotyForm()

@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera pola z informacjami o lotach:
+    /// -ID
+    /// -ilosc wykupionych miejsc
+    /// -kwota za lot
+    /// -czas lotu
+    /// -trasa
+    /// -samolot.
+    /// </summary>
     class Lot
     {
         public int ID { get; set; }

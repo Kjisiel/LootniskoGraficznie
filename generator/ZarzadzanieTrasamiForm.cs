@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa pozwala na zarządzanie trasami: ich przeglądanie, dodawanie i usuwanie.
+    /// </summary>
     public partial class ZarzadzanieTrasamiForm : Form
     {
         public ZarzadzanieTrasamiForm()

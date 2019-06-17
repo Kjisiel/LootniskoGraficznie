@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa służy do obliczania odległości między lotniskami na podstawie szerokości oraz długości geograficznej.
+    /// </summary>
     class DistanceUtil
     {
         private static double CONST_40075 = 40075.704;

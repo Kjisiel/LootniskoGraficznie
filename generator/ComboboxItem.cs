@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa wykorzystywana do list rozwijalnych w interfejsie graficznym.
+    /// </summary>
     class ComboboxItem
     {
         public string Text { get; set; }

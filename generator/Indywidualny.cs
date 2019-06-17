@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera pola z informacjami o klientach indywidualnych:
+    /// -imię
+    /// -nazwisko.
+    /// Pochodna klasy Klient.
+    /// </summary>
     class Indywidualny : Klient
     {
         public string imie { set; get; }

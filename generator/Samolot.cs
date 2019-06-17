@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera pola z informacjami o samolotach:
+    /// -ID
+    /// -nazwa
+    /// -zasięg
+    /// -liczba miejsc
+    /// -średnia prędkość
+    /// -lotnisko, na którym obecnie się znajduje.
+    /// </summary>
     class Samolot
     {
         public int ID { get; set; }

@@ -10,6 +10,17 @@ using System.IO;
 
 namespace L1
 {
+    /// <summary>
+    /// Klasa zwiera listy ze wszystkimi obiektami klas:
+    /// -Klient
+    /// -Samolot
+    /// -Lotnikso
+    /// -Trasa
+    /// -Lot
+    /// -Bilet
+    /// oraz metody pozwalające na dodawanie i usuwanie obiektów tych list,
+    /// a także metody pozwalające na zapisanie stanu systemu do plików XML oraz jego odczyt.
+    /// </summary>
     class BazaDanych
     {
         public static List<Klient> klienci = new List<Klient>();
