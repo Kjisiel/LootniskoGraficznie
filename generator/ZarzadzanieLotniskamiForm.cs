@@ -53,22 +53,59 @@ namespace generator
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-
-
-            int ID = 1;
-            if (BazaDanych.lotniska.Count() > 0)
+            try
             {
-                ID = BazaDanych.lotniska.Max(x => x.ID) + 1;
+
+
+                int ID = 1;
+                if (BazaDanych.lotniska.Count() > 0)
+                {
+                    ID = BazaDanych.lotniska.Max(x => x.ID) + 1;
+                }
+                if(textBox1.Text=="")
+                {
+                    throw new ArgumentException("pole nazwa nie może być puste");
+                }
+                if (textBox2.Text == "")
+                {
+                    throw new ArgumentException("polee państwo nie może być puste");
+                }
+                if (textBox3.Text == "")
+                {
+                    throw new ArgumentException("polee miasto nie może być puste");
+                }
+                if (textBox4.Text == "")
+                {
+                    throw new ArgumentException("pole szerokość geograficzna nie może być puste");
+                }
+                if (textBox5.Text == "")
+                {
+                    throw new ArgumentException("pole wysokość geograficzna nie może być puste");
+                }
+                if(textBox4.Text.Contains(".")|| textBox5.Text.Contains("."))
+                {
+                    throw new ArgumentException("format double powinien zawieraz , nie .");
+                }
+                if (!double.TryParse(textBox4.Text,out double szerokosc))
+                {
+                    throw new ArgumentException("szerokosc geograficzna jest zlego formatu");
+                }
+                if (!double.TryParse(textBox5.Text, out double wysokosc))
+                {
+                    throw new ArgumentException("wysokość geograficzna jest zlego formatu");
+                }
+                Lotnisko lotnisko = new Lotnisko(ID, textBox1.Text, textBox2.Text,
+                    textBox3.Text, double.Parse(textBox4.Text), double.Parse(textBox5.Text));
+                Random random = new Random();
+
+                BazaDanych.lotniska.Add(lotnisko);
+
+                initLotniskaCombobox();
             }
-
-            Lotnisko lotnisko = new Lotnisko(ID, textBox1.Text, textBox2.Text,
-                textBox3.Text, double.Parse(textBox4.Text),double.Parse(textBox5.Text));
-            Random random = new Random();
-            
-            BazaDanych.lotniska.Add(lotnisko);
-
-            initLotniskaCombobox();
+            catch(ArgumentException exd)
+            {
+                MessageBox.Show(exd.Message);
+            }
         }
 
         private void ZarzadzanieLotniskamiForm_Load(object sender, EventArgs e)
@@ -114,6 +151,21 @@ namespace generator
                 comboBox1.Items.Remove(ID);
             }
             initLotniskaCombobox();
+        }
+
+        private void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

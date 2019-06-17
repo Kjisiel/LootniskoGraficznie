@@ -59,7 +59,10 @@ namespace generator
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+          
             int ID = 1;
             if (BazaDanych.samoloty.Count()>0){
                 ID = BazaDanych.samoloty.Max(x => x.ID) + 1;
@@ -68,9 +71,29 @@ namespace generator
             {
                 throw new ArgumentException("Nie poprawana nazwa");
             }
-            if(!int.TryParse(textBox2.Text,out int y))
+            if(!int.TryParse(textBox2.Text,out int zasieg))
             {
                 throw new ArgumentException("zasięg musi być liczbą calkowitą");
+            }
+            if (!int.TryParse(textBox3.Text, out int lmiejsc))
+            {
+                throw new ArgumentException("liczba miejsc musi być liczbą calkowitą");
+            }
+            if (int.Parse(textBox2.Text) <= 0)
+            {
+                throw new ArgumentException("zasieg musi być wieksza od 0");
+            }
+            if (int.Parse(textBox3.Text) <= 0)
+            {
+                throw new ArgumentException("liczba miejsc musi być wieksza od 0");
+            }
+            if (int.Parse(textBox4.Text) <= 0)
+            {
+                throw new ArgumentException("srednia predkosc musi być wieksza od 0");
+            }
+            if (!int.TryParse(textBox4.Text, out int srPredosc))
+            {
+                throw new ArgumentException("srednia predkosc musi być liczbą calkowitą");
             }
             Samolot samolot = new Samolot(ID,textBox1.Text,int.Parse(textBox2.Text),
                 int.Parse(textBox3.Text),double.Parse(textBox4.Text));
@@ -79,7 +102,12 @@ namespace generator
             BazaDanych.samoloty.Add(samolot);
             
             initSamolotyCombobox();
-
+            }
+            catch (ArgumentException exd)
+            {
+                MessageBox.Show(exd.Message);
+                
+            }
 
         }
 

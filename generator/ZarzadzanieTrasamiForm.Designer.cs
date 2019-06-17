@@ -50,13 +50,13 @@
             this.groupBox1.Size = new System.Drawing.Size(354, 426);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Usun Trase";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(220, 101);
+            this.button2.Location = new System.Drawing.Point(210, 72);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(92, 45);
             this.button2.TabIndex = 16;
             this.button2.Text = "Usuń";
             this.button2.UseVisualStyleBackColor = true;
@@ -78,12 +78,12 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(390, 12);
+            this.groupBox2.Location = new System.Drawing.Point(395, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(409, 426);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Dodaj Trase";
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(186, 187);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 35);
             this.button1.TabIndex = 15;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;

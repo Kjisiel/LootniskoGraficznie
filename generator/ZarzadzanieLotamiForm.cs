@@ -165,42 +165,59 @@ namespace generator
         
         private void Button1_Click(object sender, EventArgs e)
         {
-            Lot lot = new Lot();
-            if (BazaDanych.loty.Count > 0)
+            try
             {
-                lot.ID = BazaDanych.loty.Max(x => x.ID) + 1;
-            }
-            else
-            {
-                lot.ID = 1;
-            }
+                Lot lot = new Lot();
+                if (BazaDanych.loty.Count > 0)
+                {
+                    lot.ID = BazaDanych.loty.Max(x => x.ID) + 1;
+                }
+                else
+                {
+                    lot.ID = 1;
+                }
 
-            if (comboBox1.SelectedIndex != -1)
-            {
-                int IDtrasa = (comboBox1.SelectedItem as ComboboxItem).Value;
-                Trasa trasa = BazaDanych.trasy.Find(x => x.ID == IDtrasa); 
-                //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
-                lot.trasa = trasa;
-                
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    int IDtrasa = (comboBox1.SelectedItem as ComboboxItem).Value;
+                    Trasa trasa = BazaDanych.trasy.Find(x => x.ID == IDtrasa);
+                    //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
+                    lot.trasa = trasa;
+
+                }
+                if (comboBox2.SelectedIndex != -1)
+                {
+                    int IDsamolot = (comboBox2.SelectedItem as ComboboxItem).Value;
+                    Samolot samolot = BazaDanych.samoloty.Find(x => x.ID == IDsamolot);
+                    //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
+                    lot.samolot = samolot;
+
+                }
+                else
+                {
+                    //todo rzucenie wyjatku
+                }
+                if (!float.TryParse(textBox1.Text, out float kwota))
+                {
+                    throw new ArgumentException("Kwota musi być typu float");
+                }
+                if (float.Parse(textBox1.Text) <= 0)
+                {
+                    throw new ArgumentException("Kwota musi być wieksza od 0");
+                }
+
+                lot.kwota = float.Parse(textBox1.Text);
+
+                BazaDanych.loty.Add(lot);
+                //initSamolotyComboBox();
+                initTrasyComboBox();
+                initLotCombobox();
+
             }
-            if (comboBox2.SelectedIndex != -1)
+            catch(ArgumentException exd)
             {
-                int IDsamolot = (comboBox2.SelectedItem as ComboboxItem).Value;
-                Samolot samolot = BazaDanych.samoloty.Find(x => x.ID == IDsamolot);
-                //Console.WriteLine("a=" + BazaDanych.samoloty.Count);
-                lot.samolot = samolot;
-
-            }else
-            {
-                //todo rzucenie wyjatku
+                MessageBox.Show(exd.Message);
             }
-            lot.kwota = float.Parse(textBox1.Text);
-            BazaDanych.loty.Add(lot);
-            //initSamolotyComboBox();
-            initTrasyComboBox();
-            initLotCombobox();
-
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
