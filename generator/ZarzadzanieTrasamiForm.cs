@@ -18,6 +18,10 @@ namespace generator
             InitializeComponent();
             initTrasyCombobox();
         }
+        private void initLotniskaCombobox()
+        {
+                
+        }
         public void initOdlotCombobox()
         {
             comboBox1.Items.Clear();

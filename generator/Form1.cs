@@ -19,7 +19,7 @@ namespace generator
             InitializeComponent();
             initSamoloty();
             initLotniska();
-            initTrasy(); //test
+            initTrasy(); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
