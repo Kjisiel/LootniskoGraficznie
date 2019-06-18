@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa pozwala na zarządzanie klientami: ich przeglądanie, dodawanie i usuwanie.
+    /// </summary>
     public partial class ZarzadzanieKlientamiForm : Form
     {
         public ZarzadzanieKlientamiForm()

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace generator
 {
+    /// <summary>
+    /// Klasa pozwala na zarządzanie biletami: ich przeglądanie, "kupowanie" i usuwanie.
+    /// </summary>
     public partial class ZarzadzanieBiletamiForm : Form
     {
         public ZarzadzanieBiletamiForm()
